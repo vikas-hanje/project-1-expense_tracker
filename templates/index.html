@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block content %}
+
+<h1>Hello, welcome to Expense Tracker..</h1>
+
+<h3 style="text-align: center; text-decoration: underline;">Monthly Expenses</h3>
+
+<table class="center">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Expenses</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in expenses %}
+        <tr>
+            <td>{{row.Description}}</td>
+            <td>₹{{row.Amount}}</td>
+            <td>{{row.Name}}</td>
+            <td>{{row.Expense_Date}}</td>
+            <td>
+                <a class="link-button" href="{{ url_for('edit_expense', id=row.ExpenseID) }}">Edit</a>
+                <form action="{{ url_for('delete_expense', id=row.ExpenseID) }}" method="post" style="display:inline;">
+                    <input type="submit" class="delete-btn" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<div class="center-container">
+    <a href="{{url_for('add_expenses')}}" class="link-button">Add Expenses</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Expense
+{% endblock %}
+
+{% block content %}
+
+<h1>Add Expenses</h1>
+
+<form method="post" action="{{url_for('add_expenses')}}">
+    <label for="amt">Amount:</label>
+    <input type="number" id="amt" name="amt" step="0.01" required value="₹"><br>
+    <label for="des">Description:</label>
+    <input type="text" id="des" name="des" required value="abc..."><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="" disabled selected>-- select category --</option>
+
+        {% for cat in categories %}
+        <option value="{{cat.CategoryID}}">{{cat.Name}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <input type="submit" class="link-button" id="submit" name="submit" value="Add">
+</form>
+
+{% endblock %}
