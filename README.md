@@ -21,7 +21,7 @@ Getting Started
     ```python -m venv env```
     ```source env/bin/activate``` 
 
-    On Windows use: ```env\Scripts\activate```
+        On Windows use: ```env\Scripts\activate```
 - Install the required dependencies:
     ```pip install -r requirements.txt```
 - Create a .env file in the root directory and add your MySQL database credentials.
