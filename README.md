@@ -18,15 +18,22 @@ Tech Stack
 Getting Started
 - Clone this repository to your local machine.
 - Create and activate a virtual environment:
+
         python -m venv env
         source env/bin/activate 
 
     On Windows use:
+
         env\Scripts\activate
+
 - Install the required dependencies:
+
         pip install -r requirements.txt
+
 - Create a .env file in the root directory and add your MySQL database credentials.
 - Set up your database by running the queries found in schema.sql.
 - Start the Flask server:
+
         python app.py
+        
 - Open your browser and navigate to (http://127.0.0.1:5000).
